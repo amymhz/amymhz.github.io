@@ -4,201 +4,322 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amy MacDougall | Partner, BCG</title>
+  <meta name="description" content="Amy MacDougall, PhD — Partner at Boston Consulting Group. Growth strategy and transformation for MedTech, BioPharma, and Life Sciences." />
+  <meta property="og:title" content="Amy MacDougall, Ph.D. — Partner, BCG" />
+  <meta property="og:description" content="Growth strategy for MedTech and BioPharma, built on a decade in the lab and applied in the boardroom." />
+  <meta property="og:url" content="https://www.amymacdougall.com" />
+  <meta property="og:type" content="profile" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230F1113'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23C8A45D' text-anchor='middle'%3EAM%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream: #F7F5F1;
-      --white: #FFFFFF;
-      --charcoal: #1C1C1C;
-      --mid: #4A4A4A;
-      --light: #8A8A8A;
-      --hero: #2C3E50;
-      --hero-accent: #3D5166;
-      --link-hover: #3D5166;
-      --rule: #D8D4CC;
+      --ink: #0F1113;
+      --ink-alt: #15181B;
+      --ink-raise: #1A1E22;
+      --cream: #F2EFE8;
+      --body: #A7AAAF;
+      --faint: #6B6F75;
+      --hairline: #272B30;
+      --hairline-strong: #34393F;
+      --brass: #C8A45D;
+      --brass-dim: rgba(200, 164, 93, 0.35);
       --serif: 'Libre Baskerville', Georgia, serif;
       --sans: 'DM Sans', sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: var(--sans);
-      background: var(--cream);
-      color: var(--charcoal);
+      background: var(--ink);
+      color: var(--cream);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── HERO ── */
-    .hero {
-      background: var(--hero);
-      color: var(--white);
-      padding: clamp(40px, 7vw, 80px) clamp(20px, 6vw, 80px);
+    ::selection { background: var(--brass); color: var(--ink); }
+
+    .wrap { max-width: 1000px; margin: 0 auto; }
+
+    /* ── TOP BAR (sticky) ── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 17, 19, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--hairline);
+      padding: 16px clamp(20px, 6vw, 80px);
     }
+    .topbar .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+    }
+    .topbar span {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      color: var(--faint);
+      text-transform: uppercase;
+    }
+    .topbar .topbar-name { color: var(--cream); }
+
+    /* ── HERO ── */
+    .hero { padding: clamp(48px, 8vw, 96px) clamp(20px, 6vw, 80px) clamp(40px, 6vw, 72px); }
 
     .hero-inner {
-      max-width: 1000px;
-      margin: 0 auto;
       display: flex;
-      gap: clamp(28px, 4vw, 56px);
+      gap: clamp(28px, 5vw, 64px);
       align-items: center;
     }
 
     .hero-photo {
-      width: clamp(100px, 18vw, 190px);
-      height: clamp(100px, 18vw, 190px);
-      border-radius: 2px;
+      width: clamp(96px, 16vw, 150px);
+      height: clamp(96px, 16vw, 150px);
       object-fit: cover;
       object-position: top center;
       flex-shrink: 0;
       display: block;
+      border: 1px solid var(--hairline-strong);
+      padding: 5px;
+      background: var(--ink-alt);
     }
 
     .hero-text { flex: 1; min-width: 0; }
 
-    .hero-text h1 {
-      font-family: var(--sans);
-      font-weight: 500;
-      font-size: clamp(1.6rem, 4.5vw, 2.8rem);
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      color: var(--white);
-      margin-bottom: 10px;
-    }
-
-    .hero-role {
-      font-family: var(--sans);
-      font-weight: 300;
-      font-size: clamp(0.7rem, 1.5vw, 0.875rem);
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 24px;
-    }
-
-    .hero-statement {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: clamp(0.9rem, 1.8vw, 1.05rem);
-      line-height: 1.7;
-      color: rgba(255,255,255,0.8);
-      border-left: 2px solid rgba(255,255,255,0.2);
-      padding-left: 18px;
-      max-width: 580px;
-    }
-
-    /* ── PANELS ── */
-    .panel {
-      padding: clamp(36px, 5vw, 64px) clamp(20px, 6vw, 80px);
-      border-bottom: 1px solid var(--rule);
-    }
-    .panel:last-of-type { border-bottom: none; }
-
-    .panel-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .panel-label {
-      display: block;
-      font-family: var(--sans);
-      font-weight: 500;
-      font-size: 0.7rem;
+    .hero-kicker {
+      font-family: var(--mono);
+      font-size: clamp(0.7rem, 1.5vw, 0.8rem);
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--light);
+      color: var(--brass);
+      margin-bottom: 18px;
+    }
+
+    .hero-text h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.9rem, 5vw, 3.1rem);
+      letter-spacing: -0.01em;
+      line-height: 1.12;
+      color: var(--cream);
       margin-bottom: 20px;
     }
 
-    .panel-content p {
-      font-family: var(--sans);
+    .hero-statement {
+      font-size: clamp(0.95rem, 1.9vw, 1.08rem);
       font-weight: 300;
-      font-size: clamp(0.88rem, 1.6vw, 0.97rem);
+      line-height: 1.8;
+      color: var(--body);
+      max-width: 580px;
+    }
+    .hero-statement strong { font-weight: 400; color: var(--cream); }
+
+    /* ── SECTION SHELL ── */
+    .panel {
+      padding: clamp(40px, 6vw, 72px) clamp(20px, 6vw, 80px);
+      border-top: 1px solid var(--hairline);
+    }
+    .panel.alt { background: var(--ink-alt); }
+
+    .panel-label {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+    .panel-label .num {
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      color: var(--brass);
+      letter-spacing: 0.1em;
+    }
+    .panel-label .name {
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--body);
+    }
+    .panel-label::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid var(--hairline);
+      transform: translateY(-4px);
+    }
+
+    .panel-content p {
+      font-weight: 300;
+      font-size: clamp(0.95rem, 1.7vw, 1.05rem);
       line-height: 1.85;
-      color: var(--mid);
+      color: var(--body);
       margin-bottom: 16px;
-      max-width: 720px;
+      max-width: 740px;
     }
     .panel-content p:last-child { margin-bottom: 0; }
+    .panel-content p strong { font-weight: 400; color: var(--cream); }
 
     /* ── FOCUS GRID ── */
     .focus-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: clamp(20px, 3vw, 36px);
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0;
+      border: 1px solid var(--hairline);
     }
 
     .focus-item {
-      padding: 24px;
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-radius: 2px;
+      padding: 28px 26px;
+      border-right: 1px solid var(--hairline);
+      background: var(--ink-alt);
+    }
+    .focus-item:last-child { border-right: none; }
+
+    .focus-item .focus-num {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--brass);
+      display: block;
+      margin-bottom: 14px;
     }
 
     .focus-item h3 {
       font-family: var(--sans);
       font-weight: 500;
-      font-size: 0.85rem;
-      letter-spacing: 0.02em;
-      color: var(--charcoal);
+      font-size: 1.02rem;
+      letter-spacing: 0.01em;
+      color: var(--cream);
       margin-bottom: 10px;
     }
 
     .focus-item p {
-      font-family: var(--sans);
       font-weight: 300;
-      font-size: 0.875rem;
+      font-size: 0.93rem;
       line-height: 1.75;
-      color: var(--mid);
-      margin-bottom: 0;
-      max-width: none;
+      color: var(--body);
+      margin: 0;
     }
 
-    /* ── PUBLICATIONS & APPEARANCES ── */
+    @media (max-width: 760px) {
+      .focus-item { border-right: none; border-bottom: 1px solid var(--hairline); }
+      .focus-item:last-child { border-bottom: none; }
+      .hero-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ── PUBLICATION CARDS ── */
+    .pub-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 960px) { .pub-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .pub-grid { grid-template-columns: 1fr; } }
+
+    a.pub-card {
+      display: block;
+      text-decoration: none;
+      border: 1px solid var(--hairline-strong);
+      background: var(--ink-raise);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    a.pub-card:hover { border-color: var(--brass-dim); transform: translateY(-3px); }
+    a.pub-card:hover .pub-card-title { color: var(--brass); }
+    a.pub-card:hover .pub-card-arrow { color: var(--brass); transform: translateX(3px); }
+
+    .pub-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .pub-card-body { padding: 16px 18px 18px; }
+
+    .pub-card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
+    .pub-card-meta span {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+
+    .pub-card-title {
+      font-family: var(--serif);
+      font-size: 0.93rem;
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.5;
+      transition: color 0.15s;
+      margin-bottom: 12px;
+    }
+
+    .pub-card-arrow {
+      font-family: var(--mono);
+      font-size: 0.95rem;
+      color: var(--hairline-strong);
+      transition: color 0.15s, transform 0.15s;
+      display: inline-block;
+    }
+
+    /* ── APPEARANCES LIST ── */
     a.pub-item {
       display: grid;
-      grid-template-columns: 48px 1fr;
+      grid-template-columns: 64px 1fr auto;
       gap: 18px;
-      align-items: start;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--rule);
+      align-items: baseline;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--hairline);
       text-decoration: none;
       color: inherit;
     }
-    a.pub-item:first-of-type { border-top: 1px solid var(--rule); }
-    a.pub-item:last-of-type { border-bottom: none; }
-    a.pub-item:hover .pub-title { color: var(--link-hover); }
+    a.pub-item:first-of-type { border-top: 1px solid var(--hairline); }
+    a.pub-item:hover .pub-title { color: var(--brass); }
+    a.pub-item:hover .pub-arrow { color: var(--brass); transform: translateX(3px); }
 
     .pub-year {
-      font-family: var(--sans);
-      font-weight: 300;
-      font-size: 0.78rem;
-      color: var(--light);
-      padding-top: 3px;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--faint);
     }
 
     .pub-title {
       font-family: var(--serif);
-      font-size: 0.93rem;
+      font-size: 1rem;
       font-weight: 400;
-      color: var(--charcoal);
-      line-height: 1.45;
+      color: var(--cream);
+      line-height: 1.5;
       margin-bottom: 4px;
       transition: color 0.15s;
     }
 
     .pub-type {
-      font-family: var(--sans);
-      font-weight: 300;
+      font-family: var(--mono);
+      font-weight: 400;
       font-size: 0.74rem;
-      color: var(--light);
-      letter-spacing: 0.06em;
+      color: var(--faint);
+      letter-spacing: 0.1em;
       text-transform: uppercase;
+    }
+
+    .pub-arrow {
+      font-family: var(--mono);
+      font-size: 0.95rem;
+      color: var(--hairline-strong);
+      transition: color 0.15s, transform 0.15s;
     }
 
     /* ── CREDENTIALS ── */
@@ -207,198 +328,261 @@
       justify-content: space-between;
       align-items: baseline;
       gap: 24px;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--rule);
+      padding: 18px 0;
+      border-bottom: 1px solid var(--hairline);
       flex-wrap: wrap;
     }
-    .cred-item:last-child { border-bottom: none; }
+    .cred-item:first-child { border-top: 1px solid var(--hairline); }
 
     .cred-degree {
       font-family: var(--serif);
-      font-size: 0.93rem;
-      color: var(--charcoal);
+      font-size: 1rem;
+      color: var(--cream);
     }
 
     .cred-school {
-      font-family: var(--sans);
-      font-size: 0.83rem;
-      font-weight: 300;
-      color: var(--light);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      color: var(--faint);
     }
 
-    /* ── CONTACT ── */
-    .panel.contact { background: var(--hero); }
-    .panel.contact .panel-label { color: rgba(255,255,255,0.35); }
-    .panel.contact .panel-content p { color: rgba(255,255,255,0.6); }
+    /* ── CONTACT / FOOTER ── */
+    .panel.contact { border-top: 1px solid var(--hairline-strong); }
 
     .contact-links {
       display: flex;
-      gap: 28px;
-      margin-top: 20px;
+      gap: 32px;
+      margin-top: 24px;
       flex-wrap: wrap;
     }
 
     .contact-link {
-      font-family: var(--sans);
-      font-weight: 400;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--white);
+      color: var(--cream);
       text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.25);
-      padding-bottom: 2px;
-      transition: border-color 0.2s;
+      border-bottom: 1px solid var(--brass-dim);
+      padding-bottom: 3px;
+      transition: color 0.2s, border-color 0.2s;
     }
-    .contact-link:hover { border-color: rgba(255,255,255,0.75); }
+    .contact-link:hover { color: var(--brass); border-color: var(--brass); }
 
-    /* ── ALTERNATING PANEL BACKGROUNDS ── */
-    .panel.alt { background: var(--white); }
-
+    .colophon {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--hairline);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .colophon span {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--faint);
+      text-transform: uppercase;
+    }
   </style>
 </head>
 <body>
 
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="wrap">
+      <span class="topbar-name">Amy MacDougall</span>
+      <span>34.05°N, 118.24°W</span>
+    </div>
+  </div>
+
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-inner">
+    <div class="wrap hero-inner">
       <img
         class="hero-photo"
         src="https://web-assets.bcg.com/dims4/default/690e948/2147483647/strip/true/crop/1566x1566+0+0/resize/500x500!/format/webp/quality/90/?url=http%3A%2F%2Fboston-consulting-group-brightspot.s3.amazonaws.com%2F86%2Fe8%2F4ba78a3f42b3a265ddc86a47383f%2Famy-hurwitz.jpg"
         alt="Amy MacDougall"
       />
       <div class="hero-text">
+        <p class="hero-kicker">Partner, Boston Consulting Group · Los Angeles</p>
         <h1>Amy MacDougall, Ph.D.</h1>
-        <p class="hero-role">Partner, Boston Consulting Group &nbsp;·&nbsp; Los Angeles</p>
         <p class="hero-statement">
-          I help senior leaders across industries (especially in MedTech and BioPharma) set ambitious growth targets and translate them into executable strategy at the intersection of innovation, strategic judgment, and enterprise transformation.
+          I help senior leaders, especially in <strong>MedTech and BioPharma</strong>, set ambitious growth targets and translate them into executable strategy at the intersection of innovation, strategic judgment, and enterprise transformation.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- WHAT I DO -->
+  <!-- 01 WHAT I DO -->
   <section class="panel">
-    <div class="panel-inner">
-      <span class="panel-label">What I Do</span>
-      <div class="panel-content">
-        <div class="focus-grid">
-          <div class="focus-item">
-            <h3>Growth &amp; Value Creation</h3>
-            <p>I work with leadership teams to define credible long-term ambitions, build muscle for strategic foresight, prioritize competing strategic options, and build roadmaps that translate aspiration into execution.</p>
-          </div>
-          <div class="focus-item">
-            <h3>End-to-End Transformation</h3>
-            <p>I help organizations move from growth ambition to realized, enterprise-level impact by translating targets to executable programs and initiatives supported by a durable operating model to deliver value.</p>
-          </div>
-          <div class="focus-item">
-            <h3>MedTech &amp; Life Sciences</h3>
-            <p>Deep expertise across life science tools, diagnostics, genomics, biopharma, medical devices, and health tech, grounded in a research background in translational biology.</p>
-          </div>
+    <div class="wrap">
+      <div class="panel-label"><span class="num">01</span><span class="name">What I do</span></div>
+      <div class="focus-grid">
+        <div class="focus-item">
+          <span class="focus-num">/A</span>
+          <h3>Growth &amp; value creation</h3>
+          <p>Defining credible long-term ambitions, building muscle for strategic foresight, prioritizing competing options, and building roadmaps that translate aspiration into execution.</p>
+        </div>
+        <div class="focus-item">
+          <span class="focus-num">/B</span>
+          <h3>End-to-end transformation</h3>
+          <p>Moving from growth ambition to realized, enterprise-level impact through executable programs and initiatives supported by a durable operating model.</p>
+        </div>
+        <div class="focus-item">
+          <span class="focus-num">/C</span>
+          <h3>MedTech &amp; life sciences</h3>
+          <p>Deep expertise across life science tools, diagnostics, genomics, biopharma, medical devices, and health tech, grounded in translational biology research.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BACKGROUND -->
+  <!-- 02 BACKGROUND -->
   <section class="panel alt">
-    <div class="panel-inner">
-      <span class="panel-label">Background</span>
+    <div class="wrap">
+      <div class="panel-label"><span class="num">02</span><span class="name">Background</span></div>
       <div class="panel-content">
-        <p>I am a Partner at Boston Consulting Group, where I lead engagements in Corporate Finance &amp; Strategy and Health Care. My work focuses on growth strategy, total shareholder return, innovation, and large-scale transformation — primarily with MedTech, BioPharma, and Life Sciences companies.</p>
-        <p>I am a co-author of BCG's Most Innovative Companies and Vitality reports and bring considerable expertise in digital health, molecular diagnostics, pharmacology, data analytics, deep tech, and commercialization.</p>
+        <p>I am a Partner at Boston Consulting Group, where I lead engagements in <strong>Corporate Finance &amp; Strategy and Health Care</strong>. My work focuses on growth strategy, total shareholder return, innovation, and large-scale transformation, primarily with MedTech, BioPharma, and Life Sciences companies.</p>
+        <p>I am a co-author of BCG's <strong>Most Innovative Companies</strong> and <strong>Vitality</strong> reports and bring considerable expertise in digital health, molecular diagnostics, pharmacology, data analytics, deep tech, and commercialization.</p>
         <p>Before joining BCG, I was a research fellow in pharmacology at Baylor College of Medicine and a founder and board member of Enventure, a non-profit connecting life science entrepreneurs with educational and networking resources.</p>
       </div>
     </div>
   </section>
 
-  <!-- SELECT PUBLICATIONS -->
+  <!-- 03 SELECT PUBLICATIONS -->
   <section class="panel">
-    <div class="panel-inner">
-      <span class="panel-label">Select Publications</span>
-      <div class="panel-content">
+    <div class="wrap">
+      <div class="panel-label"><span class="num">03</span><span class="name">Select publications</span></div>
+      <div class="pub-grid">
 
-        <a class="pub-item" href="https://www.bcg.com/publications/2025/in-disruptive-times-resilient-win" target="_blank" rel="noopener">
-          <span class="pub-year">2025</span>
-          <div><div class="pub-title">Most Innovative Companies 2025: In Disruptive Times, the Resilient Win</div><div class="pub-type">Report · BCG</div></div>
+        <a class="pub-card" href="https://www.bcg.com/publications/2025/vitality-code-how-growth-leaders-master-strategy-technology-people-culture" target="_blank" rel="noopener">
+          <img src="https://web-assets.bcg.com/dims4/default/deb5de2/2147483647/strip/true/crop/2880x1512+0+54/resize/1200x630!/format/webp/quality/90/?url=http%3A%2F%2Fboston-consulting-group-brightspot.s3.amazonaws.com%2Ff7%2F08%2F1cf87be74a999a68fddcc254a4df%2Fthe-vitality-code-how-growth-leaders-master-strategy-technology-people-and-culture-rectangle.jpg" alt="The Vitality Code report artwork" loading="lazy" />
+          <div class="pub-card-body">
+            <div class="pub-card-meta"><span>2025</span><span>Report · BCG</span></div>
+            <div class="pub-card-title">The Vitality Code: How Growth Leaders Master Strategy, Technology, People, and Culture</div>
+            <span class="pub-card-arrow">→</span>
+          </div>
         </a>
 
-        <a class="pub-item" href="https://www.bcg.com/publications/2025/vitality-code-how-growth-leaders-master-strategy-technology-people-culture" target="_blank" rel="noopener">
-          <span class="pub-year">2025</span>
-          <div><div class="pub-title">The Vitality Code: How Growth Leaders Master Strategy, Technology, People, and Culture</div><div class="pub-type">Report · BCG</div></div>
+        <a class="pub-card" href="https://www.bcg.com/publications/2025/in-disruptive-times-resilient-win" target="_blank" rel="noopener">
+          <img src="https://web-assets.bcg.com/dims4/default/80ddd26/2147483647/strip/true/crop/2880x1620+0+0/resize/768x432!/brightness/-10x0/format/webp/quality/90/?url=http%3A%2F%2Fboston-consulting-group-brightspot.s3.amazonaws.com%2Fa1%2Fe1%2Fcb69659a48739a6f5ca55a467739%2Fin-disruptive-times-the-resilient-win-rectangle.jpg" alt="Most Innovative Companies 2025 report artwork" loading="lazy" />
+          <div class="pub-card-body">
+            <div class="pub-card-meta"><span>2025</span><span>Report · BCG</span></div>
+            <div class="pub-card-title">Most Innovative Companies 2025: In Disruptive Times, the Resilient Win</div>
+            <span class="pub-card-arrow">→</span>
+          </div>
         </a>
 
-        <a class="pub-item" href="https://www.bcg.com/publications/2024/innovation-systems-need-a-reboot" target="_blank" rel="noopener">
-          <span class="pub-year">2024</span>
-          <div><div class="pub-title">Innovation Systems Need a Reboot</div><div class="pub-type">Report · BCG</div></div>
+        <a class="pub-card" href="https://www.bcg.com/publications/2024/innovation-systems-need-a-reboot" target="_blank" rel="noopener">
+          <img src="https://web-assets.bcg.com/dims4/default/2a930c3/2147483647/strip/true/crop/2880x1620+0+0/resize/768x432!/format/webp/quality/90/?url=http%3A%2F%2Fboston-consulting-group-brightspot.s3.amazonaws.com%2Ff6%2F09%2F44c06e03468ba5f12a4d53094ece%2Finnovation-systems-need-a-reboot-rectangle.jpg" alt="Most Innovative Companies 2024 report artwork" loading="lazy" />
+          <div class="pub-card-body">
+            <div class="pub-card-meta"><span>2024</span><span>Report · BCG</span></div>
+            <div class="pub-card-title">Most Innovative Companies 2024: Innovation Systems Need a Reboot</div>
+            <span class="pub-card-arrow">→</span>
+          </div>
         </a>
 
-        <a class="pub-item" href="https://www.bcg.com/publications/2023/advantages-through-innovation-in-uncertain-times" target="_blank" rel="noopener">
-          <span class="pub-year">2023</span>
-          <div><div class="pub-title">Most Innovative Companies 2023: Reaching New Heights in Uncertain Times</div><div class="pub-type">Report · BCG</div></div>
+        <a class="pub-card" href="https://www.bcg.com/publications/2023/ecosystem-governance-for-innovation-hubs" target="_blank" rel="noopener">
+          <img src="https://web-assets.bcg.com/dims4/default/f8a5d99/2147483647/strip/true/crop/2880x1440+0+0/resize/768x384!/format/webp/quality/90/?url=http%3A%2F%2Fboston-consulting-group-brightspot.s3.amazonaws.com%2F8f%2Fd7%2Faed4a35c47b3bfe798754567c4d8%2Fan-ecosystem-approach-to-governing-innovation-hubs-hero.jpg" alt="An Ecosystem Approach to Governing Innovation Hubs artwork" loading="lazy" />
+          <div class="pub-card-body">
+            <div class="pub-card-meta"><span>2023</span><span>Article · BCG</span></div>
+            <div class="pub-card-title">An Ecosystem Approach to Governing Innovation Hubs</div>
+            <span class="pub-card-arrow">→</span>
+          </div>
         </a>
 
-        <a class="pub-item" href="https://www.bcg.com/publications/2023/how-synthetic-biology-materials-can-make-a-difference" target="_blank" rel="noopener">
-          <span class="pub-year">2023</span>
-          <div><div class="pub-title">How Synthetic Biology Can Make a Materials Difference</div><div class="pub-type">Article · BCG</div></div>
+        <a class="pub-card" href="https://www.bcg.com/publications/2023/advantages-through-innovation-in-uncertain-times" target="_blank" rel="noopener">
+          <img src="https://web-assets.bcg.com/dims4/default/9e8474d/2147483647/strip/true/crop/2880x1621+0+0/resize/768x432!/format/webp/quality/90/?url=http%3A%2F%2Fboston-consulting-group-brightspot.s3.amazonaws.com%2F1a%2Ff2%2F6d8aee934df89cdb0dd5be8f4a26%2Fmost-innovative-companies-2023-opt.jpg" alt="Most Innovative Companies 2023 report artwork" loading="lazy" />
+          <div class="pub-card-body">
+            <div class="pub-card-meta"><span>2023</span><span>Report · BCG</span></div>
+            <div class="pub-card-title">Most Innovative Companies 2023: Reaching New Heights in Uncertain Times</div>
+            <span class="pub-card-arrow">→</span>
+          </div>
         </a>
 
-        <a class="pub-item" href="https://www.bcg.com/publications/2018/prescription-for-blockchain-healthcare" target="_blank" rel="noopener">
-          <span class="pub-year">2018</span>
-          <div><div class="pub-title">A Prescription for Blockchain in Health Care</div><div class="pub-type">Article · BCG</div></div>
+        <a class="pub-card" href="https://www.bcg.com/publications/2023/how-synthetic-biology-materials-can-make-a-difference" target="_blank" rel="noopener">
+          <img src="https://web-assets.bcg.com/dims4/default/0f2d03b/2147483647/strip/true/crop/2880x1512+0+54/resize/1200x630!/format/webp/quality/90/?url=http%3A%2F%2Fboston-consulting-group-brightspot.s3.amazonaws.com%2F76%2Fde%2Fcb520e564c749231845918b24af6%2Fhow-synthetic-biology-can-make-a-materials-difference-rectangle.jpg" alt="How Synthetic Biology Can Make a Materials Difference artwork" loading="lazy" />
+          <div class="pub-card-body">
+            <div class="pub-card-meta"><span>2023</span><span>Article · BCG</span></div>
+            <div class="pub-card-title">How Synthetic Biology Can Make a Materials Difference</div>
+            <span class="pub-card-arrow">→</span>
+          </div>
+        </a>
+
+        <a class="pub-card" href="https://www.bcg.com/publications/2022/innovation-in-climate-and-sustainability-will-lead-to-green-growth" target="_blank" rel="noopener">
+          <img src="https://web-assets.bcg.com/dims4/default/1dda995/2147483647/strip/true/crop/2880x1620+0+0/resize/1200x675!/format/webp/quality/90/?url=http%3A%2F%2Fboston-consulting-group-brightspot.s3.amazonaws.com%2Fab%2Fea%2Fc697b8d34a4d91087d01b1ee0a8f%2Fmost-innovative-companies-hero-rectangle-2.jpg" alt="Most Innovative Companies 2022 report artwork" loading="lazy" />
+          <div class="pub-card-body">
+            <div class="pub-card-meta"><span>2022</span><span>Report · BCG</span></div>
+            <div class="pub-card-title">Most Innovative Companies 2022: Are You Ready for Green Growth?</div>
+            <span class="pub-card-arrow">→</span>
+          </div>
+        </a>
+
+        <a class="pub-card" href="https://www.bcg.com/publications/2018/prescription-for-blockchain-healthcare" target="_blank" rel="noopener">
+          <img src="https://web-assets.bcg.com/dims4/default/831a248/2147483647/strip/true/crop/2880x1512+0+54/resize/1200x630!/format/webp/quality/90/?url=http%3A%2F%2Fboston-consulting-group-brightspot.s3.amazonaws.com%2F75%2F3c%2F11ada8469fa35e0101b6fe7d0330%2Feyeem-2880x1620-tcm9-189233.jpg" alt="A Prescription for Blockchain in Health Care artwork" loading="lazy" />
+          <div class="pub-card-body">
+            <div class="pub-card-meta"><span>2018</span><span>Article · BCG</span></div>
+            <div class="pub-card-title">A Prescription for Blockchain in Health Care</div>
+            <span class="pub-card-arrow">→</span>
+          </div>
         </a>
 
       </div>
     </div>
   </section>
 
-  <!-- SELECT APPEARANCES -->
+  <!-- 04 SELECT APPEARANCES -->
   <section class="panel alt">
-    <div class="panel-inner">
-      <span class="panel-label">Select Appearances</span>
-      <div class="panel-content">
+    <div class="wrap">
+      <div class="panel-label"><span class="num">04</span><span class="name">Select appearances</span></div>
 
-        <a class="pub-item" href="https://www.linkedin.com/posts/signavio_podcast-process-transformers-ep-6-activity-7190738494439251969-ATfw?utm_source=share&utm_medium=member_ios&rcm=ACoAAAJcDIIBaanc0mehN9Yv0IILF-IlVwvWeXo" target="_blank" rel="noopener">
-          <span class="pub-year">2024</span>
-          <div><div class="pub-title">Process Transformers, Ep. 6: Enterprise AI and Business Transformation</div><div class="pub-type">Podcast · SAP Signavio</div></div>
-        </a>
+      <a class="pub-item" href="https://www.linkedin.com/posts/signavio_podcast-process-transformers-ep-6-activity-7190738494439251969-ATfw?utm_source=share&utm_medium=member_ios&rcm=ACoAAAJcDIIBaanc0mehN9Yv0IILF-IlVwvWeXo" target="_blank" rel="noopener">
+        <span class="pub-year">2024</span>
+        <div><div class="pub-title">Process Transformers, Ep. 6: Enterprise AI and Business Transformation</div><div class="pub-type">Podcast · SAP Signavio</div></div>
+        <span class="pub-arrow">→</span>
+      </a>
 
-        <a class="pub-item" href="https://www.genialis.com/2023/06/29/ai-and-ethics-in-healthtech-who-is-innovating-most" target="_blank" rel="noopener">
-          <span class="pub-year">2023</span>
-          <div><div class="pub-title">Talking Precision Medicine, Ep. 31: AI and Ethics in Healthtech — Who Is Innovating Most?</div><div class="pub-type">Podcast · Genialis</div></div>
-        </a>
+      <a class="pub-item" href="https://www.genialis.com/2023/06/29/ai-and-ethics-in-healthtech-who-is-innovating-most" target="_blank" rel="noopener">
+        <span class="pub-year">2023</span>
+        <div><div class="pub-title">Talking Precision Medicine, Ep. 31: AI and Ethics in Healthtech — Who Is Innovating Most?</div><div class="pub-type">Podcast · Genialis</div></div>
+        <span class="pub-arrow">→</span>
+      </a>
 
-      </div>
     </div>
   </section>
 
-  <!-- EDUCATION -->
+  <!-- 05 EDUCATION -->
   <section class="panel">
-    <div class="panel-inner">
-      <span class="panel-label">Education</span>
-      <div class="panel-content">
-        <div class="cred-item">
-          <span class="cred-degree">PhD, Translational Biology &amp; Molecular Medicine</span>
-          <span class="cred-school">Baylor College of Medicine</span>
-        </div>
-        <div class="cred-item">
-          <span class="cred-degree">BS, Biochemistry</span>
-          <span class="cred-school">University of Southern California</span>
-        </div>
+    <div class="wrap">
+      <div class="panel-label"><span class="num">05</span><span class="name">Education</span></div>
+      <div class="cred-item">
+        <span class="cred-degree">PhD, Translational Biology &amp; Molecular Medicine</span>
+        <span class="cred-school">Baylor College of Medicine</span>
+      </div>
+      <div class="cred-item">
+        <span class="cred-degree">BS, Biochemistry</span>
+        <span class="cred-school">University of Southern California</span>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- 06 CONTACT -->
   <section class="panel contact">
-    <div class="panel-inner">
-      <span class="panel-label">Contact</span>
+    <div class="wrap">
+      <div class="panel-label"><span class="num">06</span><span class="name">Contact</span></div>
       <div class="panel-content">
         <p>I work with CEOs, boards, and senior leadership teams. If you're navigating a complex strategic decision in healthcare or life sciences, I'm glad to connect.</p>
         <div class="contact-links">
           <a class="contact-link" href="https://www.linkedin.com/in/amyhurwitz" target="_blank" rel="noopener">LinkedIn</a>
           <a class="contact-link" href="https://www.bcg.com/about/people/experts/amy-macdougall-hurwitz" target="_blank" rel="noopener">BCG Profile</a>
         </div>
+      </div>
+      <div class="colophon">
+        <span>© 2026 Amy MacDougall</span>
+        <span>Designed &amp; built with AI</span>
       </div>
     </div>
   </section>
